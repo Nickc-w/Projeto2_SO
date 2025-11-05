@@ -1,0 +1,10 @@
+# IntelliJ
+.idea/
+*.iml
+
+# Arquivos compilados
+*.class
+
+# Logs e temporários
+*.log
+*.tmp
