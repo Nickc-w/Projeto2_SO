@@ -1,18 +1,20 @@
+
 public class Consumidor extends Thread {
-    private Buffer buffer;
+    private final Buffer buffer;
 
     public Consumidor(Buffer buffer){
         this.buffer = buffer;
-    }
+    } // Construtor
 
     // está sobrescrevendo o metodo run() herdado da classe Thread. Ao fazer isso:
-    // Avisa ao JAVA  que essa lógica é trabalho independente que deve ser executado em paralelo com o resto do programa.
+    // Avisa ao JAVA  que essa lógica é trabalho independente que deve ser executado em paralelo com o resto do programa = Thread
     @Override
     public void run(){
 
+        // Consumo de até 12 itens
         for (int i=0;i < 12;i++){
             try{
-                buffer.consumir();
+                buffer.consumir(); // Consumindo o item
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 return;

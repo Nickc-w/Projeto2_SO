@@ -1,17 +1,18 @@
 public class Produtor extends Thread {
-    private Buffer buffer;
+    private final Buffer buffer;
 
     public Produtor(Buffer buffer){
         this.buffer = buffer;
-    }
+    } // Construtor
 
 
     @Override
     public void run(){
 
+        // Produção de até 15 itens
         for (int i=0;i < 15;i++){
             try{
-                buffer.produzir(i);
+                buffer.produzir(i); // Produz um item
 
                 // Pegando e tratando o  InterruptedException se o processo for interrmpido
             } catch (InterruptedException e) {

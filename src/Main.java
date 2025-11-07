@@ -10,15 +10,14 @@ public class Main {
         Produtor produtor = new Produtor(buffer);
         Consumidor consumidor = new Consumidor(buffer);
 
-        // 3. INICIA AS THREADS
-        // O start() faz com que o código do run() de cada um comece a rodar EM PARALELO.
+        // 3. INICIA AS THREAD
         // Ao usar start = a JVM criará duas novas Threads, e o código do run() de cada uma será executado simultaneamente
         // JVM = Máquina Virtual Java = responsável pelo Gerenciamento de Threads
         produtor.start();
         consumidor.start();
 
-        // 4. ESPERA AS THREADS TERMINAREM (Correto!)
-        // Para somente DEPOIS fechar o log (sem isso, o arquivo log é fechará antes)
+        // 4. ESPERA AS THREADS TERMINAREM
+        // Servem para fechar o log DEPOIS da execeução das Threads (sem isso, o arquivo log fechará antes)
         produtor.join();
         consumidor.join();
 
