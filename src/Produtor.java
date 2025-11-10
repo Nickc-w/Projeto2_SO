@@ -14,7 +14,7 @@ public class Produtor extends Thread {
             try{
                 buffer.produzir(i); // Produz um item
 
-                // Pegando e tratando o  InterruptedException se o processo for interrmpido
+                // Pegando e tratando o InterruptedException se o processo for interrompido
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt(); // Sinaliza a interrupção para outras partes do sistema.
                 return; // sai do metodo run() . Encerra o trabalho da Thread
