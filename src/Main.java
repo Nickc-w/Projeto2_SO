@@ -18,8 +18,7 @@ public class Main {
         consumidor.start();
 
         // 4. JOIN = ESPERA AS THREADS TERMINAREM antes de fechar o LOG
-            // Servem para fechar o log DEPOIS da execeução das Threads, sem eles, o Main criaria as Threads, as iniciaria e seguiria para " buffer.fecharLog();"
-                                                                        // Fechando o log ANTES das Threads terminarem
+            // Main só irá para o próximo comando " buffer.fecharLog();" quando as Threads terminarem suas tarefas
         produtor.join();
         consumidor.join();
 

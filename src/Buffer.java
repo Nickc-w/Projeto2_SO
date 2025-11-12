@@ -36,7 +36,7 @@ public class Buffer {
 
     // 2. quantos espaços estão ocupados.
     private final Semaphore espacosOcupados = new Semaphore(0);
-        // Acquire = confere se tem ocupados (> 0). Se tiver, libera seu uso e decrescenta -1 do contador de "espacosOcupados", senão bloqueia (=0)
+        // Acquire = confere se tem espaços ocupados (> 0). Se tiver, libera seu uso e decrescenta -1 do contador de "espacosOcupados", senão bloqueia (=0)
         // Release = acrescenta ao contador de "espaçosOcupados" + 1. Sinaliza ao Consumidor que um item foi inserido.
 
 
@@ -75,10 +75,10 @@ public class Buffer {
         // Acesso exclusivo á Thread que for usar o recurso
         cadeado.lock(); // Começo da Região crítica
 
-        // Try-finally = é obrigatório com o ReentrantLock para evitar o: o Deadlock. = usando o unlock
+        // Try-finally = é obrigatório com o ReentrantLock para evitar o: o Deadlock = usando o unlock em finally
         try {
             // Produzindo um item
-            buffer.add(item);
+            buffer.add(item); // buffer
 
             // Gravação do Log de Produção
                 // O metodo availablePermits() retorna o número de permissões restantes!
@@ -110,7 +110,9 @@ public class Buffer {
 
         try {
             // Seguindo a regra FIFO, o primeiro a entrar vai ser o primeiro a sair
-            buffer.remove(0);
+            buffer.remove(0); // buffer
+
+
 
             int espacosDisponiveisAtual = 7 - buffer.size();
 
