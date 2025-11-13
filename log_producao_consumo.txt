@@ -18,10 +18,10 @@ Produtor - Inserido um item no buffer - espaços disponíveis: 4
 Produtor - Inserido um item no buffer - espaços disponíveis: 3 
 Produtor - Inserido um item no buffer - espaços disponíveis: 2 
 Produtor - Inserido um item no buffer - espaços disponíveis: 1 
-Produtor - Inserido um item no buffer - espaços disponíveis: 0 
-Consumidor - Consumido um item no buffer -  espaços disponíveis: 1
 Consumidor - Consumido um item no buffer -  espaços disponíveis: 2
 Consumidor - Consumido um item no buffer -  espaços disponíveis: 3
 Consumidor - Consumido um item no buffer -  espaços disponíveis: 4
 Consumidor - Consumido um item no buffer -  espaços disponíveis: 5
+Consumidor - Consumido um item no buffer -  espaços disponíveis: 6
+Produtor - Inserido um item no buffer - espaços disponíveis: 5 
 Produtor - Inserido um item no buffer - espaços disponíveis: 4 
