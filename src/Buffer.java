@@ -82,6 +82,7 @@ public class Buffer {
 
             // Gravação do Log de Produção
                 // O metodo availablePermits() retorna o número de permissões restantes!
+                // Usa availablePermits() pois o semáforo já reflete os espaços após o acquire().
             String logProducao = String.format(
                     "Produtor - Inserido um item no buffer - espaços disponíveis: %d ",espacosDisponiveis.availablePermits()
             );
@@ -114,6 +115,7 @@ public class Buffer {
 
 
 
+            // Usa 7 - buffer.size() pois o semáforo ainda não foi liberado (valor desatualizado).
             int espacosDisponiveisAtual = 7 - buffer.size();
 
             // Gravação do Log de Consumo
